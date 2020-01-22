@@ -13,15 +13,41 @@ class RecentActivities extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Transaction()
+        Transaction(
+          title: "Samuel Achem",
+          subtitle: "Airtime",
+          color: Color(0xFF00B55B),
+          date: "Jan 23, 2020",
+          icon: Icons.receipt,
+          amount: "\$1000.00",
+        ),
+        Transaction(
+          title: "Bank transfer",
+          subtitle: "To self",
+          color: Colors.red,
+          date: "Jan 21, 2020",
+          icon: Icons.remove,
+          amount: "\$3000.00",
+        ),
       ],
     );
   }
 }
 
 class Transaction extends StatelessWidget {
-
-
+  final title;
+  final subtitle;
+  final amount;
+  final date;
+  final icon;
+  final color;
+  Transaction(
+      {this.title,
+      this.subtitle,
+      this.amount,
+      this.date,
+      this.icon,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +60,13 @@ class Transaction extends StatelessWidget {
           leading: CircleAvatar(
             backgroundColor: Color(0xFFEDF8ED),
             child: Icon(
-              Icons.receipt,
+              icon,
               color: Color(0xFF00B55B),
             ),
             radius: 30.0,
           ),
-          title: Text("Samuel Achem"),
-          subtitle: Text("Softcom Airtime"),
+          title: Text(title),
+          subtitle: Text(subtitle),
           trailing: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
@@ -48,9 +74,9 @@ class Transaction extends StatelessWidget {
                 height: 10.0,
               ),
               Text(
-                "\$1000",
+                amount,
                 style: TextStyle(
-                  color: Color(0xFF00B55B),
+                  color: color,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w500,
                 ),
@@ -59,7 +85,7 @@ class Transaction extends StatelessWidget {
                 height: 4.0,
               ),
               Text(
-                "Jan 22, 2020",
+                date,
                 style: TextStyle(fontSize: 12.0, color: Colors.grey),
               )
             ],

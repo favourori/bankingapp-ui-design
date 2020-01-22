@@ -32,7 +32,7 @@ class Invest extends StatelessWidget {
                 child: RichText(
                   softWrap: true,
                   text: TextSpan(
-                    text: 'Earn the highest interest rate by',
+                    text: 'Earn the highest interest rate by ',
                     style: DefaultTextStyle.of(context).style,
                     children: <TextSpan>[
                       TextSpan(text: 'investing in a fixed plan')
