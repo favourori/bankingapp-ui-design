@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -43,8 +44,16 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text("Payments"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.redeem),
+            icon: Icon(Icons.folder_open),
             title: Text("Plan"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_activity),
+            title: Text("Activity"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.face),
+            title: Text("Profile"),
           ),
         ],
       ),
