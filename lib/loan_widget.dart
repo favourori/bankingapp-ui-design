@@ -32,7 +32,7 @@ class Loan extends StatelessWidget {
                 child: RichText(
                   softWrap: true,
                   text: TextSpan(
-                    text: 'Recieve funds in your account',
+                    text: 'Recieve funds in your account ',
                     style: DefaultTextStyle.of(context).style,
                     children: <TextSpan>[
                       TextSpan(text: 'in as little as 5 minutes')

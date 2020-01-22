@@ -11,7 +11,7 @@ class RecentActivities extends StatelessWidget {
           style: TextStyle(fontSize: 17.0),
         ),
         SizedBox(
-          height: 30.0,
+          height: 10.0,
         ),
         Transaction()
       ],
@@ -26,8 +26,9 @@ class Transaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 1,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
         child: ListTile(
           contentPadding: EdgeInsets.all(0),
           leading: CircleAvatar(

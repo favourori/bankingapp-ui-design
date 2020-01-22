@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Dashboard(),
             SizedBox(
-              height: 40.0,
+              height: 30.0,
             ),
             RecentActivities(),
           ],
