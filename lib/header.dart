@@ -22,11 +22,11 @@ class Header extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 20.0,
+          width: 14.0,
         ),
         Text(
           "Hello, Favour",
-          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
         )
       ],
     );
