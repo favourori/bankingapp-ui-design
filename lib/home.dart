@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Dashboard(),
               SizedBox(
-                height: 10.0,
+                height: 30.0,
               ),
               RecentActivities(),
             ],

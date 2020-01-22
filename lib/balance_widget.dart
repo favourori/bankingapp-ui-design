@@ -6,7 +6,7 @@ class Balance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       //height: 140.0,
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 26.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 29.0),
       decoration: BoxDecoration(
         color: Color(0xFF342780),
         borderRadius: BorderRadius.all(
