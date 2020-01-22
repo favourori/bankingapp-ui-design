@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.payment),
             title: Text("Payments"),
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),
