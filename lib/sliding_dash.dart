@@ -12,22 +12,38 @@ class _SlidingDashState extends State<SlidingDash> {
       width: double.infinity,
       height: 180.0,
       child: ListView(
-        //shrinkWrap: true,
-
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          ActionsSlider(),
-          SizedBox(
-            width: 20.0,
+          ActionsSlider(
+            bgcolor: Color(0xFFD0F2F1),
+            title: "Send",
+            subtitle: "Money",
+            image: "images/money.png",
+            iconColor: Color(0xFF8DE6E0),
           ),
-          ActionsSlider(),
           SizedBox(
-            width: 20.0,
+            width: 16.0,
           ),
-          ActionsSlider(),
+          ActionsSlider(
+            bgcolor: Color(0xFFE4DCF5),
+            title: "Bill",
+            subtitle: "Payment",
+            image: "images/pay.png",
+            iconColor: Color(0xFFC0ABEB),
+          ),
           SizedBox(
-            width: 30.0,
+            width: 16.0,
           ),
+          ActionsSlider(
+            bgcolor: Color(0xFFF8EDCA),
+            title: "Data &",
+            subtitle: "Airtime",
+            image: "images/transfer.png",
+            iconColor: Color(0xFFF6D979),
+          ),
+          // SizedBox(
+          //   width: 30.0,
+          // ),
         ],
       ),
     );
@@ -35,9 +51,14 @@ class _SlidingDashState extends State<SlidingDash> {
 }
 
 class ActionsSlider extends StatelessWidget {
-  const ActionsSlider({
-    Key key,
-  }) : super(key: key);
+  final title;
+  final subtitle;
+  final bgcolor;
+  final iconColor;
+  final image;
+
+  ActionsSlider(
+      {this.title, this.subtitle, this.bgcolor, this.iconColor, this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -48,28 +69,28 @@ class ActionsSlider extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(8.0),
         ),
-        color: Color(0xFFD0F2F1),
+        color: bgcolor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           CircleAvatar(
             child: Image.asset(
-              'images/money.png',
+              image,
               width: 37.0,
             ),
-            backgroundColor: Color(0xFF8DE6E0),
+            backgroundColor: iconColor,
             radius: 33.0,
           ),
           SizedBox(
             height: 20.0,
           ),
           Text(
-            "Send",
+            title,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0),
           ),
           Text(
-            "Money",
+            subtitle,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0),
           )
         ],
