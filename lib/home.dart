@@ -1,6 +1,7 @@
+import 'package:bankingapp/home_screen.dart';
+import 'package:bankingapp/payment.dart';
 import 'package:bankingapp/recent.dart';
 import 'package:flutter/material.dart';
-
 import 'dashboard.dart';
 import 'header.dart';
 
@@ -10,29 +11,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+  final List<Widget> children = [
+    HomePage(),
+    Payment(),
+    Payment(),
+    Payment(),
+    Payment(),
+  ];
+
+  void onTappedBar(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              height: 30.0,
-            ),
-            Header(),
-            SizedBox(
-              height: 20.0,
-            ),
-            Dashboard(),
-            SizedBox(
-              height: 30.0,
-            ),
-            RecentActivities(),
-          ],
-        ),
-      ),
+      body: children[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        onTap: onTappedBar,
+        currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
@@ -42,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.payment),
             title: Text("Payments"),
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),
