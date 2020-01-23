@@ -34,9 +34,20 @@ class Payment extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            RecentPayment(),
-            RecentPayment(),
-            RecentPayment(),
+            RecentPayment(
+              title: "Samuel Achem",
+              iconText: "SA",
+              trailingIconBackground: Color(0xFFFDF4F0),
+              trailingIconColor: Color(0xFFF37A4E),
+              trailingIcon: Icons.remove,
+            ),
+            RecentPayment(
+              title: "Favour Ori",
+              iconText: "FO",
+              trailingIconBackground: Color(0xFFFDF4F0),
+              trailingIconColor: Color(0xFFF37A4E),
+              trailingIcon: Icons.remove,
+            ),
           ],
         ),
       ),
@@ -45,9 +56,21 @@ class Payment extends StatelessWidget {
 }
 
 class RecentPayment extends StatelessWidget {
-  const RecentPayment({
-    Key key,
-  }) : super(key: key);
+  final title;
+  final subtitle1;
+  final subtitle2;
+  final iconText;
+  final trailingIconBackground;
+  final trailingIcon;
+  final trailingIconColor;
+  RecentPayment(
+      {this.title,
+      this.subtitle1,
+      this.subtitle2,
+      this.iconText,
+      this.trailingIcon,
+      this.trailingIconBackground,
+      this.trailingIconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +78,9 @@ class RecentPayment extends StatelessWidget {
       elevation: 0.2,
       child: Container(
         child: ListTile(
-          title: Text("Favour Ori"),
+          title: Text(title),
           leading: CircleAvatar(
-            child: Text("FO"),
+            child: Text(iconText),
             backgroundColor: Color(0xFFF5F5F7),
             foregroundColor: Colors.grey,
           ),
@@ -77,9 +100,9 @@ class RecentPayment extends StatelessWidget {
             ),
           ),
           trailing: CircleAvatar(
-            child: Icon(Icons.remove),
-            backgroundColor: Color(0xFFFDF4F0),
-            foregroundColor: Color(0xFFF37A4E),
+            child: Icon(trailingIcon),
+            backgroundColor: trailingIconBackground,
+            foregroundColor: trailingIconColor,
           ),
         ),
       ),
