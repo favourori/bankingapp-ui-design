@@ -1,6 +1,5 @@
 import 'package:bankingapp/recent.dart';
 import 'package:flutter/material.dart';
-
 import 'dashboard.dart';
 import 'header.dart';
 
