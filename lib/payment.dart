@@ -23,6 +23,13 @@ class Payment extends StatelessWidget {
               height: 40.0,
             ),
             SlidingDash(),
+            SizedBox(
+              height: 40.0,
+            ),
+            Text(
+              "Saved Payments",
+              style: TextStyle(fontSize: 18.0),
+            )
           ],
         ),
       ),
