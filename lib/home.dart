@@ -1,9 +1,6 @@
 import 'package:bankingapp/home_screen.dart';
 import 'package:bankingapp/payment.dart';
-import 'package:bankingapp/recent.dart';
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
-import 'header.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

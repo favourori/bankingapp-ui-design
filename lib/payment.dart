@@ -5,15 +5,26 @@ import 'package:flutter/rendering.dart';
 class Payment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      child: ListView(
-        children: <Widget>[
-          Text("Hello"),
-          Flexible(
-            child: SlidingDash(),
-          )
-        ],
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20.0,
+        ),
+        child: ListView(
+          children: <Widget>[
+            SizedBox(
+              height: 50.0,
+            ),
+            Text(
+              "Payments",
+              style: TextStyle(fontSize: 27.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            SlidingDash(),
+          ],
+        ),
       ),
     );
   }
