@@ -20,6 +20,8 @@ class RecentActivities extends StatelessWidget {
           date: "Jan 23, 2020",
           icon: Icons.receipt,
           amount: "\$1000.00",
+          iconBgColor: Color(0xFFEDF8ED),
+          iconColor: Color(0xFF00B55B),
         ),
         Transaction(
           title: "Bank transfer",
@@ -28,6 +30,8 @@ class RecentActivities extends StatelessWidget {
           date: "Jan 21, 2020",
           icon: Icons.remove,
           amount: "\$3000.00",
+          iconBgColor: Color(0xFFFDF4F0),
+          iconColor: Color(0xFFF6AA8A),
         ),
       ],
     );
@@ -41,13 +45,18 @@ class Transaction extends StatelessWidget {
   final date;
   final icon;
   final color;
-  Transaction(
-      {this.title,
-      this.subtitle,
-      this.amount,
-      this.date,
-      this.icon,
-      this.color});
+  final iconColor;
+  final iconBgColor;
+  Transaction({
+    this.title,
+    this.subtitle,
+    this.amount,
+    this.date,
+    this.icon,
+    this.color,
+    this.iconColor,
+    this.iconBgColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +67,10 @@ class Transaction extends StatelessWidget {
         child: ListTile(
           contentPadding: EdgeInsets.all(0),
           leading: CircleAvatar(
-            backgroundColor: Color(0xFFEDF8ED),
+            backgroundColor: iconBgColor,
             child: Icon(
               icon,
-              color: Color(0xFF00B55B),
+              color: iconColor,
             ),
             radius: 30.0,
           ),
