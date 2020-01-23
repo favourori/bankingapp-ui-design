@@ -52,7 +52,7 @@ class Transaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 1,
+      elevation: 0.2,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
         child: ListTile(
